@@ -15,11 +15,11 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - omni_pg_data:/var/lib/postgresql/data
+      - type: bind
+        source: ./omni-pg-data
+        target: /var/lib/postgresql/data
     networks:
       - omni-network
 
-volumes:
-  omni_pg_data:
 networks:
   omni-network:
